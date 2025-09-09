@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balaji Jewellers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdf6e3;
+    }
+    header {
+      background: goldenrod;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    header button {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      padding: 5px 10px;
+      border: none;
+      background: #333;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav input {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: gold;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      background: white;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .price {
+      color: green;
+      font-weight: bold;
+    }
+    .slideshow img {
+      width: 80%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    footer a {
+      color: gold;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Balaji Jewellers</h1>
+    <p id="tagline">Pure. Elegant. Timeless.</p>
+    <button onclick="toggleLang()">हिंदी/English</button>
+  </header>
+  
+  <nav>
+    <input type="text" id="search" placeholder="Search Products..." onkeyup="searchProducts()">
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <section id="about">
+    <h2>About Us</h2>
+    <p id="aboutText">Welcome to Balaji Jewellers, your trusted destination for premium brass jewellery.  
+       We craft jewellery that reflects tradition and elegance.</p>
+  </section>
+  
+  <section id="products">
+    <h2>Our Collection</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x200?text=Necklace" alt="Necklace">
+        <h3>Necklace</h3>
+        <p>Beautiful brass necklace with elegant design.</p>
+        <p class="price">₹2,500</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x200?text=Ring" alt="Ring">
+        <h3>Ring</h3>
+        <p>Stylish brass rings for every occasion.</p>
+        <p class="price">₹800</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x200?text=Bangles" alt="Bangles">
+        <h3>Bangles</h3>
+        <p>Traditional bangles with modern touch.</p>
+        <p class="price">₹1,200</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="slideshow">
+      <img id="slide" src="https://via.placeholder.com/600x400?text=Jewellery+1" alt="Jewellery">
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>Customer Reviews</h2>
+    <p>"Balaji Jewellers has the best quality jewellery. I loved the designs!" – Priya</p>
+    <p>"Affordable and beautiful collection. Highly recommended." – Ramesh</p>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Balaji Library</strong><br>
+    Vijaypura, Rajasthan 302031<br>
+    Phone: <a href="tel:+919352759822">+91-9352759822</a>, 
+           <a href="tel:+919950698605">+91-9950698605</a><br>
+    Email: <a href="mailto:vasugujjar5858@gmail.com">vasugujjar5858@gmail.com</a></p>
+    <p><strong>Opening Hours:</strong> 9:00 AM – 6:00 PM (Mon–Sat)</p>
+    <iframe src="https://www.google.com/maps?q=Vijaypura,Rajasthan&output=embed" 
+            width="80%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Balaji Jewellers | Designed by Vasu Gurjar ❤️</p>
+    <p>
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">YouTube</a>
+    </p>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/919950698605" target="_blank">WhatsApp Us</a>
+
+  <script>
+    // Language Toggle
+    function toggleLang() {
+      let title = document.getElementById("title");
+      let tagline = document.getElementById("tagline");
+      let aboutText = document.getElementById("aboutText");
+      if (title.innerText === "Balaji Jewellers") {
+        title.innerText = "बालाजी ज्वेलर्स";
+        tagline.innerText = "शुद्ध. आकर्षक. सदाबहार.";
+        aboutText.innerText = "बालाजी ज्वेलर्स में आपका स्वागत है, प्रीमियम पीतल आभूषणों का आपका विश्वसनीय स्थान। हम आभूषण बनाते हैं जो परंपरा और सुंदरता को दर्शाते हैं।";
+      } else {
+        title.innerText = "Balaji Jewellers";
+        tagline.innerText = "Pure. Elegant. Timeless.";
+        aboutText.innerText = "Welcome to Balaji Jewellers, your trusted destination for premium brass jewellery. We craft jewellery that reflects tradition and elegance.";
+      }
+    }
+
+    // Slideshow
+    let slideIndex = 0;
+    const slides = [
+      "https://via.placeholder.com/600x400?text=Jewellery+1",
+      "https://via.placeholder.com/600x400?text=Jewellery+2",
+      "https://via.placeholder.com/600x400?text=Jewellery+3"
+    ];
+    function showSlides() {
+      document.getElementById("slide").src = slides[slideIndex];
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+    setInterval(showSlides, 3000);
+
+    // Search Products
+    function searchProducts() {
+      let input = document.getElementById("search").value.toLowerCase();
+      let cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
